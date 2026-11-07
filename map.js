@@ -1270,6 +1270,6 @@ function buildGraphAndRun(
 
     resultElement.innerHTML =
         `<strong>Shortest path found.</strong><br>` +
-        `Distance: <b>${route.distance}</b><br><br>`
+        `Distance: <b>${route.distance}m</b><br><br>`;
 }
 

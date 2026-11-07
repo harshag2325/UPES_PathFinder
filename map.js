@@ -201,7 +201,7 @@ function aStar(graph, src, target) {
 // Draw the calculated path over the campus map using the numbered map nodes.
 // The numeric label on each map point is the same ID used by the graph.
 function drawRouteOnMap(path) {
-    const roadLayer = document.getElementById("road-layer");
+    const roadLayer = document.getElementById("route-layer") || document.getElementById("road-layer");
     if (!roadLayer || typeof MAP_DATA === "undefined") {
         console.warn("Campus map layer or MAP_DATA was not found.");
         return;
@@ -1264,10 +1264,12 @@ function buildGraphAndRun(
     }
 
     drawRouteOnMap(route.path);
+    if (typeof window.focusRouteOnMap === "function") {
+        window.focusRouteOnMap(route.path);
+    }
 
     resultElement.innerHTML =
         `<strong>Shortest path found.</strong><br>` +
-        `Distance: <b>${route.distance}</b><br><br>` +
-        `<strong>Path:</strong><br>${route.path.join(" → ")}`;
+        `Distance: <b>${route.distance}</b><br><br>`
 }
 

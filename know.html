@@ -287,7 +287,36 @@
                 width: calc(100% - 24px);
                 padding-top: 28px;
             }
+            .topbar {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 12px;
+                min-height: 60px;
+            }
 
+            .school {
+                width: 100%;
+                max-width: 90px;
+                height: auto;
+                object-fit: contain;
+                justify-self: start;
+            }
+            
+            .topbar h1 {
+                font-size: clamp(19px, 5vw, 24px);
+                white-space: nowrap;
+                text-align: center;
+            }
+            
+            .topbar img.brand {
+                height: 36px !important;
+                width: auto;
+                max-width: 100%;
+                object-fit: contain;
+                justify-self: end;
+            }
             .contributors {
                 grid-template-columns: 1fr;
             }

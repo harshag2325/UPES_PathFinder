@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description"
+        content="About UPES Pathfinder, a campus navigation project for students, faculty, and visitors.">
+    <title>About UPES Pathfinder</title>
+    <style>
+        :root {
+            --navy: #0f172a;
+            --ink: #1e293b;
+            --muted: #64748b;
+            --green: #15965b;
+            --line: #e2e8f0;
+            --page: #f3f7f5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            background: radial-gradient(circle at 10% 0%, rgba(21, 150, 91, .10), transparent 30rem), var(--page);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .site-header {
+            padding: 18px max(20px, calc((100% - 1040px)/2));
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: var(--green);
+        }
+
+        main {
+            width: min(100% - 36px, 960px);
+            margin: auto;
+            padding: 48px 0 60px;
+        }
+
+        .eyebrow {
+            color: #107849;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 7px 0 10px;
+            color: var(--navy);
+            font-size: clamp(34px, 6vw, 50px);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .section {
+            margin-top: 22px;
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            background: #fff;
+            box-shadow: 0 8px 28px rgba(15, 23, 42, .045);
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            color: var(--navy);
+            font-size: 22px;
+        }
+
+        .section p {
+            margin: 0;
+            color: #475569;
+        }
+
+        .contributors {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .person {
+            min-width: 0;
+            padding: 17px 14px;
+            border: 1px solid var(--line);
+            border-radius: 13px;
+            background: #fbfdfc;
+            transition: .18s ease;
+        }
+
+        .person:hover {
+            transform: translateY(-3px);
+            border-color: #b8dfca;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, .07);
+        }
+
+        .avatar {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 11px;
+            border-radius: 12px;
+            color: #107849;
+            background: #e4f5eb;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .person h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #0877b5;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .profile-link:hover {
+            text-decoration: underline;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 14px 0 20px;
+        }
+
+        .tech {
+            padding: 6px 11px;
+            border: 1px solid #dce9e1;
+            border-radius: 999px;
+            color: #286044;
+            background: #f0f8f3;
+            font-size: 13px;
+            font-weight: 650;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 17px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 9px 15px;
+            border: 1px solid var(--line);
+            border-radius: 9px;
+            color: var(--ink);
+            background: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .project-link.primary {
+            color: #fff;
+            border-color: var(--green);
+            background: var(--green);
+        }
+
+        .project-link:hover {
+            filter: brightness(.96);
+        }
+
+        .topbar {
+            min-height: 68px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 12px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .school {
+            font-size: 11px;
+            line-height: 1.2;
+            color: #555;
+            letter-spacing: .3px;
+        }
+
+        .topbar h1 {
+            font-size: 30px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .brand {
+            font-size: 26px;
+            font-weight: 700;
+            color: #222;
+        }
+
+
+        @media(max-width:760px) {
+            main {
+                padding-top: 36px;
+            }
+
+            .contributors {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .section {
+                padding: 22px;
+            }
+        }
+
+        @media(max-width:440px) {
+            main {
+                width: calc(100% - 24px);
+                padding-top: 28px;
+            }
+
+            .contributors {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 18px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <img class='school' src='./img/socs.jpg' alt='socs logo'>
+        <h1>Pathfinder</h1>
+        <img class="brand" style='height:50px' src='./img/logo.jpg' alt='upes logo'>
+    </header>
+
+
+    <main>
+        <section class="hero">
+            <div class="eyebrow">About the project</div>
+            <h1>Find your way around campus.</h1>
+            <p>UPES Pathfinder is designed to help students, faculty, and visitors navigate the university campus more
+                easily and explore it with confidence.</p>
+        </section>
+
+        <section class="section">
+            <h2>Why this project?</h2>
+            <p>Finding a destination on a large university campus can be confusing, especially for new students and
+                visitors. This project aims to make campus navigation more interactive and convenient, helping people
+                reach their destinations without getting lost.</p>
+        </section>
+
+        <section class="section">
+            <h2>Contributors</h2>
+            <p>Meet the people who contributed to UPES Pathfinder.</p>
+            <div class="contributors">
+                <article class="person">
+                    <div class="avatar" aria-hidden="true">PM</div>
+                    <h3>Prakhar Mishra</h3>
+                    <a class="profile-link" href="https://www.linkedin.com/in/prakhar-mishra-53b079228/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn profile ↗</a>
+                </article>
+                <article class="person">
+                    <div class="avatar" aria-hidden="true">D</div>
+                    <h3>Darvish</h3>
+                    <a class="profile-link" href="https://www.linkedin.com/in/darvish24/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn profile ↗</a>
+                </article>
+                <article class="person">
+                    <div class="avatar" aria-hidden="true">HS</div>
+                    <h3>Harshit Sharma</h3>
+                    <a class="profile-link" href="https://www.linkedin.com/in/harshitsh15/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn profile ↗</a>
+                </article>
+                <article class="person">
+                    <div class="avatar" aria-hidden="true">HA</div>
+                    <h3>Harsh Agrawal</h3>
+                    <a class="profile-link" href="https://www.linkedin.com/in/harshag2325/" target="_blank"
+                        rel="noopener noreferrer">LinkedIn profile ↗</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Technology and development</h2>
+            <p>The project initially used C++, Node.js, HTML, and CSS. It was later redeveloped by me for GitHub Pages using
+                Node.js, HTML, CSS, and JavaScript.</p>
+            <div class="tech-list">
+                <span class="tech">C++</span>
+                <span class="tech">Node.js</span>
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+            </div>
+            <div class="project-links">
+                <a class="project-link" href="https://github.com/harshag2325/PathFinder_UPES" target="_blank"
+                    rel="noopener noreferrer">Original repository ↗</a>
+                <a class="project-link primary" href="https://github.com/harshag2325/UPES_PathFinder" target="_blank"
+                    rel="noopener noreferrer">Current repository ↗</a>
+                <a class="project-link" href="https://harshag2325.github.io/UPES_PathFinder/" target="_blank"
+                    rel="noopener noreferrer">View live project ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="color:white; background-color: #000000;">
+        <div style='align-items: center; justify-content: center; text-align: center;'>
+            <div>
+                Contact Links-
+                <a href='https://www.linkedin.com/in/harshag2325/' alt="Linkedin">LinkedIn</a>
+                <a href='mailto:harshagrawal2325@gmail.com' alt="gmail">Gmail</a>
+                <a href='https://github.com/harshag2325' alt="github">Github</a>
+            </div>
+        </div>
+        <div>Site Hosted on Github Pages</div>
+    </footer>
+</body>
+
+</html>

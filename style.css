@@ -135,3 +135,150 @@ button:hover { background: #d8d8d8; }
 #result { margin-top:16px; padding:12px; border-radius:8px; background:#f6f8f9; border:1px solid #e8edf0; }
 @media (max-width:850px) { .controls { padding:18px; } #routeForm .location-picker-group, #routeForm .choice-group { margin-bottom:18px; padding-bottom:15px; } }
 
+
+
+/* Mobile and tablet responsive layout */
+html, body { width:100%; min-width:0; }
+body { overflow-x:hidden; }
+.layout, .panel, .controls, .map-panel { min-width:0; }
+@media (max-width:850px) {
+  .topbar { min-height:62px; padding:9px 14px; gap:10px; }
+  .topbar .school { display:block; width:clamp(48px,13vw,76px); height:auto; max-height:42px; object-fit:contain; flex:0 1 auto; }
+  .topbar h1 { flex:1 1 auto; min-width:0; text-align:center; font-size:clamp(19px,4.5vw,24px); line-height:1.15; }
+  .topbar .brand { width:clamp(58px,16vw,88px); height:auto!important; max-height:42px; object-fit:contain; flex:0 1 auto; }
+  .layout { display:flex; flex-direction:column; height:auto!important; min-height:0!important; gap:14px; padding:12px; }
+  .controls { width:100%; padding:18px; overflow:visible; order:1; }
+  .controls .intro { margin-bottom:18px; }
+  #routeForm .location-picker-group, #routeForm .choice-group { margin-bottom:18px; padding-bottom:15px; }
+  #routeForm .mode-options { column-gap:16px; row-gap:11px; }
+  #routeForm .mode-options label { min-height:28px; font-size:14px; }
+  #routeForm .mode-panel select, #routeForm .mode-panel input[type=number] { min-height:46px; font-size:16px; }
+  #findPathBtn { min-height:48px; }
+  .map-panel { width:100%; height:auto!important; min-height:0; padding:10px; order:2; align-items:stretch; justify-content:flex-start; }
+  .map-heading { width:100%; flex-wrap:wrap; gap:8px; padding:3px 2px 10px; }
+  .map-heading strong { font-size:16px; }
+  #map-counts { flex:1 1 100%; order:3; line-height:1.4; }
+  .map-zoom-controls { margin-left:auto; gap:6px; }
+  .map-zoom-controls button { min-width:38px; min-height:36px; margin:0; touch-action:manipulation; }
+  #fit-map { min-height:36px; margin:0; }
+  .map-viewport { width:100%; height:clamp(390px,58svh,650px); min-height:390px; flex:none; display:block; overflow:auto; padding:8px; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; touch-action:pan-x pan-y; }
+  .map-stage { flex:none; margin:0; }
+  #result { font-size:12px; line-height:1.55; overflow-wrap:anywhere; }
+  footer { padding:14px 10px; text-align:center; font-size:13px; line-height:1.8; }
+  footer a { display:inline-block; margin:0 5px; }
+}
+@media (max-width:480px) {
+  .topbar { padding:8px 10px; gap:7px; }
+  .topbar .school { width:48px; max-height:34px; }
+  .topbar .brand { width:62px; max-height:36px; }
+  .topbar h1 { font-size:20px; }
+  .layout { padding:9px; gap:11px; }
+  .controls { padding:15px; border-radius:10px; }
+  .controls .intro { font-size:13px; line-height:1.5; }
+  #routeForm .location-picker-group>label, #routeForm .choice-group>label { font-size:14px; }
+  #routeForm .mode-options { gap:9px 13px; }
+  #routeForm .mode-options label { font-size:13px; }
+  .map-panel { padding:8px; }
+  .map-viewport { height:56svh; min-height:360px; }
+  .map-zoom-controls button { min-width:36px; }
+  #zoom-level { min-width:40px; }
+}
+@media (max-width:360px) {
+  .topbar h1 { font-size:18px; }
+  .controls { padding:13px; }
+  #routeForm .mode-options { column-gap:9px; }
+  #routeForm .mode-options label { font-size:12px; }
+}
+\n
+
+  .map-legend-card {
+    display:flex; flex-direction:column; justify-content:center; gap:9px;
+    padding:13px 17px; border:2px solid #64748b !important;
+    border-radius:15px !important;
+    background:linear-gradient(145deg,#fff 0%,#f7fafc 100%) !important;
+    box-shadow:0 5px 18px rgba(15,23,42,.13);
+    color:#253244; text-align:left; white-space:normal; overflow:hidden;
+  }
+  .map-legend-heading {
+    padding-bottom:7px; border-bottom:1px solid #e4eaf0;
+    color:#64748b; font:700 11px/1.1 Arial,Helvetica,sans-serif;
+    letter-spacing:1.5px; text-align:left;
+  }
+  .map-legend-list { display:grid; grid-template-columns:1fr; gap:5px; min-height:0; }
+  .map-legend-row { display:flex; align-items:center; gap:11px; min-width:0; min-height:17px; }
+  .map-legend-swatch {
+    display:inline-block; flex:0 0 29px; width:29px; height:14px;
+    border:2px solid; border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(255,255,255,.55);
+  }
+  .map-legend-label {
+    min-width:0; color:#334155;
+    font:600 12px/1.2 Arial,Helvetica,sans-serif;
+    letter-spacing:.05px; text-align:left; white-space:nowrap;
+  }
+
+
+
+
+  .map-panel { position: relative; }
+  #legend-toggle {
+    margin: 0;
+    min-height: 34px;
+    padding: 7px 13px;
+    border: 1px solid #cbd5df;
+    border-radius: 7px;
+    background: #fff;
+    color: #334155;
+    font: 600 13px/1 Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  #legend-toggle:hover,
+  #legend-toggle.active {
+    background: #edf7f1;
+    border-color: #69a985;
+    color: #176b43;
+  }
+  .map-legend-card[hidden] { display: none !important; }
+  .map-legend-card:not([hidden]) {
+    position: absolute !important;
+    left: auto !important;
+    top: 58px !important;
+    right: 18px !important;
+    width: min(310px, calc(100% - 36px)) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    z-index: 20 !important;
+    padding: 16px 18px !important;
+    border-radius: 13px !important;
+    box-shadow: 0 12px 32px rgba(15,23,42,.22) !important;
+  }
+  .map-legend-card:not([hidden]) .map-legend-list { gap: 8px; }
+  .map-legend-card:not([hidden]) .map-legend-row { min-height: 22px; }
+  .map-legend-card:not([hidden]) .map-legend-label { font-size: 13px; }
+  @media (max-width: 850px) {
+    #legend-toggle { min-height: 36px; padding: 8px 12px; }
+    .map-legend-card:not([hidden]) {
+      top: 54px !important;
+      right: 10px !important;
+      width: min(300px, calc(100% - 20px)) !important;
+    }
+  }
+
+
+
+/* Map zoom/scroll fix: prevent centered flex overflow from clipping map edges. */
+#map-viewport {
+  display: block !important;
+  overflow: auto !important;
+  position: relative;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+#map-stage {
+  display: block;
+  flex: none !important;
+  margin: 0 !important;
+  transform: none !important;
+  transform-origin: top left !important;
+}

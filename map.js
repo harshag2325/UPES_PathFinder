@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Apply your existing time rule
-        time_type = time_type <= 10 ? 1 : 0;
+        time_type = time_type <= 10 && time_type>=8 ? 1 : 0;
 
         const type_type = typeNode === 1 ? 1 : 0;
 
